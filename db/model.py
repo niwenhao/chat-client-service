@@ -37,7 +37,7 @@ class TalkingHistory(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer)
     chat_session_id = Column(Integer)
-    timestame = Column(DateTime)
+    timestamp = Column(DateTime)
     role = Column(String(50))
     message = Column(String(512))
 
