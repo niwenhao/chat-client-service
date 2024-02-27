@@ -27,11 +27,10 @@ class ChatSession(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer)
     name = Column(String(50))
-    prompt = Column(String(512))
 
     def __repr__(self):
-        return "<ChatSession(id='%s', user_id='%s', name='%s', prompt='%s')>" % (
-                                self.id, self.user_id, self.name, self.prompt)
+        return "<ChatSession(id='%s', user_id='%s', name='%s')>" % (
+                                self.id, self.user_id, self.name)
 class TalkingHistory(Base):
     __tablename__ = 'talking_histories'
     id = Column(Integer, primary_key=True)
