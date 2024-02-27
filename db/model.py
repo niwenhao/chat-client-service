@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -38,7 +38,7 @@ class TalkingHistory(Base):
     chat_session_id = Column(Integer)
     timestamp = Column(DateTime)
     role = Column(String(50))
-    message = Column(String(512))
+    message = Column(Text)
 
     def __repr__(self):
         return "<TalkingHistory(user_id='%s', chat_session_id='%s', timestame='%s', role='%s', message='%s')>" % (
