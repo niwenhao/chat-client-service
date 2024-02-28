@@ -4,6 +4,7 @@ from pydantic import BaseModel
 import hashlib
 
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
@@ -29,7 +30,7 @@ async def logon(user: PostUser):
             if user.password == enc_password:
                 return {"status": "success", "id": user.id, "name": user.name}
             else:
-                return {"status": "failed", "message": "Password incorrect"}
+                return JSONResponse(content={"status": "failed", "message": "Unauthorized"}, status_code=401)
 
 # A API To create a new user with user name and password.
 # and encode the password using md5 hash and save it to the database.

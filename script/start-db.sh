@@ -1,1 +1,0 @@
-podman run --name mariadb -v $(pwd)/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d docker.io/library/mariadb
