@@ -72,7 +72,7 @@ def db_list_talking_histories(user_id: int, session_id: int):
         talking_histories = (
             session.query(TalkingHistory)
             .filter_by(user_id=user_id, chat_session_id=session_id)
-            .order_by(TalkingHistory.timestamp)
+            .order_by(TalkingHistory.id)
             .all()
         )
         return talking_histories
