@@ -1,1 +1,1 @@
-podman pod create --name chat-service -p 8080:80 -p 3306:3306 -p 8000:8000
+podman pod create --name chat-service -p 127.0.0.1:8080:80 -p 127.0.0.1:3306:3306 -p 127.0.0.1:8000:8000
