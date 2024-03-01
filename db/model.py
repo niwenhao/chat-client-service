@@ -26,11 +26,12 @@ class ChatSession(Base):
     __tablename__ = 'chat_sessions'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer)
-    name = Column(String(50))
+    name = Column(String(250))
+    model = Column(String(250))
 
     def __repr__(self):
-        return "<ChatSession(id='%s', user_id='%s', name='%s')>" % (
-                                self.id, self.user_id, self.name)
+        return "<ChatSession(id='%s', user_id='%s', name='%s', model='%s')>" % (
+                                self.id, self.user_id, self.name, self.model)
 class TalkingHistory(Base):
     __tablename__ = 'talking_histories'
     id = Column(Integer, primary_key=True)
